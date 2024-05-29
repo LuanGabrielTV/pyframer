@@ -4,6 +4,7 @@ import numpy as np
 import os
 
 
+
 def read_path(path):
     ext = ['.png', '.jpeg', '.jpg']
     paths = []
@@ -15,6 +16,14 @@ def read_path(path):
         paths = [path]
     
     return paths
+
+def create_border(img, border_percent, color):
+    # color = (r, g, b)
+    height, width = img.shape[:2]
+    padding_vertical = int(border_percent*height)
+    padding_horizontal = int(border_percent*width)
+    return cv2.copyMakeBorder(img, padding_vertical, padding_vertical, padding_horizontal, padding_horizontal, borderType=cv2.BORDER_CONSTANT, value=color)
+
 
 def fit_to_aspect_ratio(img, ar, color):
     height, width = img.shape[:2]
