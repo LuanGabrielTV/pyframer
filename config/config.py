@@ -1,0 +1,1 @@
+supported_file_formats = [ 'jpg', 'png', 'jpeg' ]

@@ -1,21 +1,20 @@
 
 import cv2
-import numpy as np
 import os
-
 
 
 def read_path(path):
     ext = ['.png', '.jpeg', '.jpg']
     paths = []
     if os.path.isdir(path):
-        paths = [(path+f) for f in os.listdir(path) if os.path.splitext(f)[1] in ext]
+        paths = [(path+f) for f in os.listdir(path) if os.path.splitext(f).[1] in ext]
     if len(os.listdir(path))!=len(paths):
         print(", ".join(f for f in os.listdir(path) if os.path.splitext(f)[1] not in ext) + " aren't supported formats")
     else:
         paths = [path]
     
     return paths
+
 
 def create_border(img, border_percent, color):
     # color = (r, g, b)
